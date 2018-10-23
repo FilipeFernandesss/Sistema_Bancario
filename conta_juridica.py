@@ -4,10 +4,10 @@ from Conta import Conta
 
 
 class ContaJuridica(Conta):
-    def __init__(self, numero, agencia, tipo, cliente):
+    def __init__(self, numero, agencia, tipo, cliente, saldo=0):
 
         #Heranca da classe Conta
-        super().__init__(numero, agencia, tipo)
+        super().__init__(numero, agencia, tipo, saldo)
 
         #Atributos do cliente
         self.empresa = cliente.get_nome()
@@ -17,7 +17,7 @@ class ContaJuridica(Conta):
 
         #Iniciando o saldo zerado e o status
         self.disponivel = True
-        self.saldo = 0
+        self.saldo = saldo
 
     #Métodos GETS
     def get_empresa(self):
@@ -34,12 +34,6 @@ class ContaJuridica(Conta):
 
     def get_disponivel(self):
         return self.disponivel
-
-    # Método depósito
-    def deposito(self, valor):
-        if self.get_disponivel():
-            self.saldo += valor
-
 
     # Informações da conta
     def infor_conta(self):

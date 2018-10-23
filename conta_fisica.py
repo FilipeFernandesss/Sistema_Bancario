@@ -30,16 +30,10 @@ class ContaFisica(Conta):
     def get_cliente(self):
         return f'Nome: {self.nome}, Identidade: {self.identidade}, Cpf: {self.cpf}'
 
-    def get_saldo(self):
-        return self.saldo
 
     def get_disponivel(self):
         return self.disponivel
 
-    #Método depósito
-    def deposito(self, valor):
-        if self.get_disponivel():
-            self.saldo += valor
 
     #Informações da conta
     def infor_conta(self):
