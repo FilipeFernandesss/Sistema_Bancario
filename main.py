@@ -26,7 +26,7 @@ print(conta_juridica.infor_conta())
 conta_juridica.deposito(150)
 print(conta_juridica.infor_conta())
 
-'''#Cartao de crédito
+#Cartao de crédito
 c1 = Cartao_Credito(conta_fisica, '7845', 789, '22/2025')
 print(c1.senha)
 c1.mudar_senha('Nova senha 123')
@@ -37,7 +37,7 @@ print(c1.conta.get_saldo())
 c1.conta.saque(140)
 print(c1.conta.get_saldo())
 
-c1.credito(150, 0)'''
+c1.credito(150, 0)
 
 #Cartão de débito
 print()

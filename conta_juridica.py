@@ -19,6 +19,9 @@ class ContaJuridica(Conta):
         self.disponivel = True
         self.saldo = saldo
 
+        #Inicializando o arquito txt
+        self.controle_txt()
+
     #Métodos GETS
     def get_empresa(self):
         return self.empresa
@@ -34,6 +37,18 @@ class ContaJuridica(Conta):
 
     def get_disponivel(self):
         return self.disponivel
+
+    # Método de controle txt
+    def controle_txt(self):
+        arquivo = open('conta_juridica.txt', 'a')
+
+        arquivo.write(self.empresa + ' - ')
+        arquivo.write(self.get_numero() + ' - ')
+        arquivo.write(self.get_agencia() + ' - ')
+        arquivo.write(self.get_tipo() + ' - ')
+        arquivo.write(str(self.get_saldo()) + '\n\r')
+
+        arquivo.close()
 
     # Informações da conta
     def infor_conta(self):

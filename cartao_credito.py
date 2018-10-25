@@ -12,6 +12,22 @@ class Cartao_Credito(Cartao):
         self.data_vencimento = data_vencimento
         self.senha = None
 
+        #Método do txt
+        self.controle_txt()
+
+    #Método de controle txt
+    def controle_txt(self):
+        arquivo = open('cartao_credito.txt', 'a')
+
+        arquivo.write(self.conta.cliente.get_nome() + ' - ')
+        arquivo.write(self.get_numero() + ' - ')
+        arquivo.write(str(self.get_codigo_seguran()) + ' - ')
+        arquivo.write(self.get_data_venc() + ' - ')
+        arquivo.write(str(self.get_senha()) + '\n\r')
+
+        arquivo.close()
+
+
     #Método de crédito
     def credito(self, valor_compra, qtd_parcela):
         if qtd_parcela <=0:
